@@ -67,3 +67,23 @@ export const getListingHistory = (id: string) =>
 
 export const getListingStats = (id: string) =>
   api.get<{ likes: number; sales: number }>(`/listing/${id}/stats`);
+
+// NFT 등록 요청 (mock)
+export async function listNFT(listingData: any) {
+  // 실제로는 서버에 POST 요청
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ success: true, txHash: '0xLIST123', ...listingData });
+    }, 800);
+  });
+}
+
+// NFT 등록 취소 요청 (mock)
+export async function cancelListing(cancelData: any) {
+  // 실제로는 서버에 POST 요청
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ success: true, txHash: '0xCANCEL123', ...cancelData });
+    }, 800);
+  });
+}
