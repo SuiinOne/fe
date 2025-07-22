@@ -1,0 +1,358 @@
+/* Design Tokens for SuiinOne */
+/* 디자인 토큰 체계: Sui Blue 기반 일관된 디자인 시스템 */
+
+:root {
+  /* === BRAND COLORS === */
+  /* Sui Blue Primary Scale */
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0efff;
+  --color-primary-200: #b8e0ff;
+  --color-primary-300: #7cc5ff;
+  --color-primary-400: #36a7ff;
+  --color-primary-500: #6c8eff;  /* Main Sui Blue */
+  --color-primary-600: #4575eb;
+  --color-primary-700: #3b66db;
+  --color-primary-800: #3555b3;
+  --color-primary-900: #334c8d;
+
+  /* Mint Accent Scale */
+  --color-accent-50: #f0fffe;
+  --color-accent-100: #ccfffe;
+  --color-accent-200: #99fffd;
+  --color-accent-300: #5cfff9;
+  --color-accent-400: #22f5ef;
+  --color-accent-500: #3de9e3;  /* Main Mint */
+  --color-accent-600: #06b6d0;
+  --color-accent-700: #0e91a5;
+  --color-accent-800: #167286;
+  --color-accent-900: #1a5e70;
+
+  /* === SEMANTIC COLORS === */
+  /* Status Colors */
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-900: #166534;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+  --color-warning-900: #92400e;
+
+  --color-error-50: #fef2f2;
+  --color-error-500: #ef4444;
+  --color-error-900: #991b1b;
+
+  --color-info-50: var(--color-primary-50);
+  --color-info-500: var(--color-primary-500);
+  --color-info-900: var(--color-primary-900);
+
+  /* === NEUTRAL COLORS === */
+  /* Gray Scale */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* === TYPOGRAPHY === */
+  /* Font Families */
+  --font-sans: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Font Weights */
+  --font-thin: 100;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* === SPACING === */
+  /* Space Scale (consistent spacing system) */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* === BORDER RADIUS === */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;  /* 2px */
+  --radius-base: 0.25rem; /* 4px */
+  --radius-md: 0.375rem;  /* 6px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-full: 9999px;
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* === BREAKPOINTS === */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* === Z-INDEX === */
+  --z-auto: auto;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+
+  /* === ANIMATION === */
+  /* Duration */
+  --duration-75: 75ms;
+  --duration-100: 100ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+  --duration-700: 700ms;
+  --duration-1000: 1000ms;
+
+  /* Timing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Common Transitions */
+  --transition-colors: color var(--duration-150) var(--ease-in-out), 
+                      background-color var(--duration-150) var(--ease-in-out), 
+                      border-color var(--duration-150) var(--ease-in-out);
+  --transition-opacity: opacity var(--duration-150) var(--ease-in-out);
+  --transition-transform: transform var(--duration-150) var(--ease-in-out);
+  --transition-all: all var(--duration-150) var(--ease-in-out);
+
+  /* Default theme values (fallback) */
+  --primary: #6c8eff;
+  --primary-foreground: #ffffff;
+  --secondary: #3de9e3;
+  --secondary-foreground: #111827;
+  --background: #0d0d0d;
+  --foreground: #f2f2f2;
+  --card: #1a1a1a;
+  --card-foreground: #f2f2f2;
+  --muted: #262626;
+  --muted-foreground: #a6a6a6;
+  --accent: #262626;
+  --accent-foreground: #f2f2f2;
+  --border: #404040;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+/* === LIGHT THEME === */
+.light {
+  /* Semantic color mappings */
+  --primary: var(--color-primary-500);
+  --primary-foreground: white;
+  --secondary: var(--color-accent-500);
+  --secondary-foreground: var(--color-gray-900);
+  
+  --background: linear-gradient(180deg, #F0F4FF 0%, #D6E4FF 60%, #B1C8FF 100%);
+  --foreground: var(--color-gray-900);
+  
+  --card: white;
+  --card-foreground: var(--color-gray-900);
+  
+  --popover: white;
+  --popover-foreground: var(--color-gray-900);
+  
+  --muted: var(--color-gray-100);
+  --muted-foreground: var(--color-gray-600);
+  
+  --accent: var(--color-primary-100);
+  --accent-foreground: var(--color-primary-900);
+  
+  --destructive: var(--color-error-500);
+  --destructive-foreground: white;
+  
+  --border: var(--color-gray-200);
+  --input: var(--color-gray-200);
+  --ring: var(--color-primary-500);
+  
+  /* Status colors */
+  --success: var(--color-success-500);
+  --warning: var(--color-warning-500);
+  --error: var(--color-error-500);
+  --info: var(--color-info-500);
+  
+  /* Shadows for light theme */
+  --shadow: var(--shadow-base);
+  --shadow-hover: var(--shadow-lg);
+}
+
+/* === DARK THEME === */
+.dark {
+  /* Semantic color mappings */
+  --primary: var(--color-primary-500);
+  --primary-foreground: white;
+  --secondary: var(--color-accent-400);
+  --secondary-foreground: var(--color-gray-900);
+  
+  --background: linear-gradient(180deg, #111827 0%, #1E293B 100%);
+  --foreground: #f2f2f2;
+  
+  --card: #1a1a1a;
+  --card-foreground: #f2f2f2;
+  
+  --popover: #1a1a1a;
+  --popover-foreground: #f2f2f2;
+  
+  --muted: #262626;
+  --muted-foreground: #a6a6a6;
+  
+  --accent: #262626;
+  --accent-foreground: #f2f2f2;
+  
+  --destructive: var(--color-error-500);
+  --destructive-foreground: white;
+  
+  --border: #404040;
+  --input: #404040;
+  --ring: var(--color-primary-400);
+  
+  /* Status colors (adjusted for dark theme) */
+  --success: var(--color-success-500);
+  --warning: var(--color-warning-500);
+  --error: var(--color-error-500);
+  --info: var(--color-info-500);
+  
+  /* Enhanced shadows for dark theme */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* === COMPONENT SPECIFIC TOKENS === */
+/* NFT Card specific */
+.nft-card {
+  --card-border-radius: var(--radius-xl);
+  --card-hover-transform: translateY(-4px);
+  --card-transition: var(--transition-all);
+  --card-overlay-opacity: 0.9;
+}
+
+/* Filter Panel specific */
+.filter-panel {
+  --panel-width: 280px;
+  --panel-max-height: calc(100vh - 120px);
+  --panel-backdrop: rgba(0, 0, 0, 0.5);
+}
+
+/* Button variants */
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--secondary);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid transparent;
+}
+
+/* === UTILITY CLASSES === */
+/* Spacing utilities using design tokens */
+.p-0 { padding: var(--space-0); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+/* Margin utilities */
+.m-0 { margin: var(--space-0); }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+
+/* Text utilities */
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+
+/* Border radius utilities */
+.rounded-none { border-radius: var(--radius-none); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded { border-radius: var(--radius-base); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* Shadow utilities */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow { box-shadow: var(--shadow-base); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }

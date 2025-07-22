@@ -1,0 +1,1 @@
+export { GameRankingTable } from './GameRankingTable';

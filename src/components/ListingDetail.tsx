@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { dummyListings } from "../utils/dummy";
-import { Card, Container, Text } from "@radix-ui/themes";
+// import { Card, Container, Text } from "@radix-ui/themes";
 import { useState } from "react";
 import { listNFT, cancelListing } from "../api/listingApi";
 

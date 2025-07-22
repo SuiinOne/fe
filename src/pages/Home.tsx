@@ -1,4 +1,4 @@
-import { Container, Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import ListingList from "../components/ListingList";
 
 export default function Home() {

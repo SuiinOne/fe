@@ -1,50 +1,150 @@
 import { ConnectButton } from "@mysten/dapp-kit";
-import { Box, Flex, Heading } from "@radix-ui/themes";
+import { Flex, Heading } from "@radix-ui/themes";
 import { useNavigate } from "react-router-dom";
+import { NotificationBell } from "../../features/notifications/components/NotificationBell";
+import { DarkModeToggle } from "../../shared/components/ui/DarkModeToggle";
+import { useTheme } from "../../shared/contexts/ThemeContext";
 
 export function Header() {
   const navigate = useNavigate();
+  const { theme } = useTheme();
+  
+  const headerStyles = {
+    light: {
+      background: 'var(--card)',
+      borderColor: 'var(--border)',
+      boxShadow: 'var(--shadow)',
+    },
+    dark: {
+      background: 'var(--card)',
+      borderColor: 'var(--border)',
+      boxShadow: 'var(--shadow-lg)',
+    }
+  };
+
+  const buttonStyles = {
+    light: {
+      background: 'var(--accent)',
+      color: 'var(--accent-foreground)',
+      border: '1px solid var(--border)',
+      fontSize: 16,
+      fontWeight: 500,
+      cursor: 'pointer',
+      padding: '8px 16px',
+      borderRadius: 8,
+      transition: 'all 150ms ease-in-out',
+      boxShadow: 'var(--shadow-sm)',
+    },
+    dark: {
+      background: 'var(--accent)',
+      color: 'var(--accent-foreground)',
+      border: '1px solid var(--border)',
+      fontSize: 16,
+      fontWeight: 500,
+      cursor: 'pointer',
+      padding: '8px 16px',
+      borderRadius: 8,
+      transition: 'all 150ms ease-in-out',
+      boxShadow: 'var(--shadow-sm)',
+    }
+  };
+
+  const currentHeaderStyle = headerStyles[theme];
+  const currentButtonStyle = buttonStyles[theme];
+
   return (
-    <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#61b6fbff', boxShadow: '0 2px 16px #61b6fb44' }}>
+    <header style={{ 
+      position: 'sticky', 
+      top: 0, 
+      zIndex: 100, 
+      ...currentHeaderStyle,
+      transition: 'all 150ms ease-in-out'
+    }}>
       <Flex
         px="4"
-        py="2"
+        py="3"
         justify="between"
         align="center"
         style={{
-          borderBottom: "1px solid #aee6ff",
+          borderBottom: `1px solid ${currentHeaderStyle.borderColor}`,
           maxWidth: 1200,
           margin: '0 auto',
         }}
       >
         <Flex align="center" gap="4">
-          <Heading style={{ cursor: 'pointer', color: '#fff', textShadow: '0 2px 8px #aee6ff' }} onClick={() => navigate('/')}>SuiinOne</Heading>
-          <button
-            style={{
-              background: 'rgba(255,255,255,0.15)', color: '#fff', border: 'none', fontSize: 16, fontWeight: 500,
-              cursor: 'pointer', padding: '6px 16px', borderRadius: 8, marginLeft: 8,
-              transition: 'background 0.2s',
-              boxShadow: '0 1px 4px #aee6ff55',
-            }}
+          <Heading 
+            size="5"
+            style={{ 
+              cursor: 'pointer', 
+              color: 'var(--foreground)',
+              transition: 'color 150ms ease-in-out'
+            }} 
             onClick={() => navigate('/')}
           >
-            홈
-          </button>
-          <button
-            style={{
-              background: 'rgba(255,255,255,0.15)', color: '#fff', border: 'none', fontSize: 16, fontWeight: 500,
-              cursor: 'pointer', padding: '6px 16px', borderRadius: 8, marginLeft: 8,
-              transition: 'background 0.2s',
-              boxShadow: '0 1px 4px #aee6ff55',
-            }}
-            onClick={() => navigate('/register-type')}
-          >
-            게임 아이템 타입 등록
-          </button>
+            SuiinOne
+          </Heading>
+          
+          <nav style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <button
+              style={currentButtonStyle}
+              onClick={() => navigate('/')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = 'var(--shadow)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = currentButtonStyle.boxShadow;
+              }}
+            >
+              마켓플레이스
+            </button>
+            <button
+              style={currentButtonStyle}
+              onClick={() => navigate('/my-nfts')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = 'var(--shadow)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = currentButtonStyle.boxShadow;
+              }}
+            >
+              내 NFT
+            </button>
+            <button
+              style={currentButtonStyle}
+              onClick={() => navigate('/favorites')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = 'var(--shadow)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = currentButtonStyle.boxShadow;
+              }}
+            >
+              좋아요 모아보기
+            </button>
+          </nav>
         </Flex>
-        <Box style={{ marginLeft: 'auto' }}>
-          <ConnectButton style={{ background: '#fff', color: '#61b6fbff', borderRadius: 8, boxShadow: '0 2px 8px #aee6ff55', fontWeight: 700 }} />
-        </Box>
+        
+        <Flex align="center" gap="3" style={{ marginLeft: 'auto' }}>
+          <NotificationBell />
+          <DarkModeToggle />
+          <ConnectButton 
+            style={{ 
+              background: 'var(--primary)',
+              color: 'var(--primary-foreground)',
+              borderRadius: 8, 
+              boxShadow: 'var(--shadow-sm)', 
+              fontWeight: 600,
+              border: '1px solid var(--primary)',
+              transition: 'all 150ms ease-in-out'
+            }} 
+          />
+        </Flex>
       </Flex>
     </header>
   );

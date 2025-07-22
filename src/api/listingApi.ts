@@ -1,15 +1,11 @@
 import api from "./axios";
 import {
   Listing,
-  Like,
-  SalesHistory,
   AcceptedType,
 } from "../types/Listing";
 import {
     dummyListings,
     dummyAcceptedTypes,
-    dummyLikes,
-    dummySalesHistory,
   } from "../utils/dummy";
 
 export const getListings = (): Promise<Listing[]> => {
@@ -60,10 +56,10 @@ export const unlikeListing = (id: string, userAddress: string) =>
   });
 
 export const getListingLikes = (id: string) =>
-  api.get<Like[]>(`/listing/${id}/likes`);
+  api.get<any[]>(`/listing/${id}/likes`);
 
 export const getListingHistory = (id: string) =>
-  api.get<SalesHistory[]>(`/listing/${id}/history`);
+  api.get<any[]>(`/listing/${id}/history`);
 
 export const getListingStats = (id: string) =>
   api.get<{ likes: number; sales: number }>(`/listing/${id}/stats`);

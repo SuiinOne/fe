@@ -1,0 +1,241 @@
+/* CLAUDE.md Phase 2.5 추가 색상 토큰 */
+:root {
+  --card-dark: #273249;
+  --card-dark-alt: #334155;
+  --card-light-alt: #F1F5FF;
+  --nft-thumb-light: #E5EFFF;
+  --nft-thumb-dark: #334155;
+  --text-secondary-light: #475569;
+  --text-secondary-dark: #94A3B8;
+  --point-hover: #A5BFFF;
+  /* Sui Brand Colors */
+  --sui-blue-50: #f0f7ff;
+  --sui-blue-100: #e0efff;
+  --sui-blue-200: #b8e0ff;
+  --sui-blue-300: #7cc5ff;
+  --sui-blue-400: #36a7ff;
+  --sui-blue-500: #6c8eff;
+  --sui-blue-600: #4575eb;
+  --sui-blue-700: #3b66db;
+  --sui-blue-800: #3555b3;
+  --sui-blue-900: #334c8d;
+  /* Mint Accent */
+  --sui-mint-50: #f0fffe;
+  --sui-mint-100: #ccfffe;
+  --sui-mint-200: #99fffd;
+  --sui-mint-300: #5cfff9;
+  --sui-mint-400: #22f5ef;
+  --sui-mint-500: #3de9e3;
+  --sui-mint-600: #06b6d0;
+  --sui-mint-700: #0e91a5;
+  --sui-mint-800: #167286;
+  --sui-mint-900: #1a5e70;
+}
+
+/* Light Theme */
+.light {
+  --background: linear-gradient(180deg, #F0F4FF 0%, #D6E4FF 60%, #B1C8FF 100%);
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: var(--sui-blue-500);
+  --primary-foreground: #ffffff;
+  --secondary: var(--sui-mint-500);
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: var(--sui-blue-100);
+  --accent-foreground: var(--sui-blue-900);
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: var(--sui-blue-500);
+  --radius: 0.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Theme */
+.dark {
+  --background: linear-gradient(180deg, #111827 0%, #1E293B 100%);
+  --foreground: #f2f2f2;
+  --card: #1a1a1a;
+  --card-foreground: #f2f2f2;
+  --popover: #1a1a1a;
+  --popover-foreground: #f2f2f2;
+  --primary: var(--sui-blue-500);
+  --primary-foreground: #ffffff;
+  --secondary: var(--sui-mint-400);
+  --secondary-foreground: #0d0d0d;
+  --muted: #262626;
+  --muted-foreground: #a6a6a6;
+  --accent: #262626;
+  --accent-foreground: #f2f2f2;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #404040;
+  --input: #404040;
+  --ring: var(--sui-blue-400);
+  --radius: 0.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+/* Global Styles - Force override Radix defaults */
+* {
+  border-color: var(--border);
+}
+
+html, body {
+  background-color: #1a1a1a !important;
+  color: #f2f2f2 !important;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background-color: #1a1a1a !important;
+  color: #f2f2f2 !important;
+  min-height: 100vh;
+}
+
+/* Force override Radix Theme background */
+.rt-Theme {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+}
+
+/* Override any blue backgrounds */
+.rt-BaseCard,
+.rt-Card,
+div[data-accent-color="blue"] {
+  background-color: var(--card) !important;
+}
+
+/* Smooth transitions for theme switching */
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: all 150ms ease-in-out !important;
+  transition-delay: 0 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 150ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 200ms ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus rings */
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Responsive Grid Styles */
+.responsive-grid {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  transition: grid-template-columns 0.3s ease;
+}
+
+.responsive-grid.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.responsive-grid.fixed-columns {
+  grid-template-columns: repeat(1, minmax(280px, 1fr));
+}
+
+/* Mobile-first responsive utilities */
+.responsive-grid .grid-item {
+  min-width: 0; /* Prevent grid item overflow */
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  .responsive-grid.fixed-columns {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .responsive-grid.fixed-columns {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+
+/* Wide breakpoint */
+@media (min-width: 1440px) {
+  .responsive-grid.fixed-columns {
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
+  }
+}
