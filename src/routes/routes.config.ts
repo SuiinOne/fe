@@ -7,6 +7,7 @@ const MyNFTsPage = lazy(() => import('../features/my-nfts/pages/MyNFTsPage').the
 const FavoritesPage = lazy(() => import('../features/favorites/pages/FavoritesPage').then(m => ({ default: m.FavoritesPage })));
 const RankingPage = lazy(() => import('../features/ranking/pages/RankingPage').then(m => ({ default: m.RankingPage })));
 const ItemRegistrationPage = lazy(() => import('../features/item-registration/pages/ItemRegistrationPage').then(m => ({ default: m.ItemRegistrationPage })));
+const ThemeTestPage = lazy(() => import('../pages/ThemeTestPage').then(m => ({ default: m.ThemeTestPage })));
 
 export const routes = {
   marketplace: {
@@ -41,5 +42,10 @@ export const routes = {
     component: ItemRegistrationPage,
     title: '아이템 타입 등록',
     protected: true,
+  },
+  themeTest: {
+    path: '/theme-test',
+    component: ThemeTestPage,
+    title: '테마 테스트',
   },
 } as const;

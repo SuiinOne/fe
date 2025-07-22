@@ -25,6 +25,7 @@ export default function AppRouter() {
         <Route path={routes.favorites.path} element={<routes.favorites.component />} />
         <Route path={routes.ranking.path} element={<routes.ranking.component />} />
         <Route path={routes.itemRegistration.path} element={<routes.itemRegistration.component />} />
+        <Route path={routes.themeTest.path} element={<routes.themeTest.component />} />
         
         {/* Legacy routes - to be migrated */}
         <Route path="/home-legacy" element={<Home />} />

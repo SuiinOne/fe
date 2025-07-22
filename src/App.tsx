@@ -10,13 +10,7 @@ function AppContent() {
 
   return (
     <div
-      style={{
-        minHeight: '100vh',
-        background:
-          'linear-gradient(to bottom, #F0F4FF 0%, #D6E4FF 50%, #B1C8FF 100%)', // CLAUDE.md 라이트 모드 그라데이션
-        color: '#0F172A', // 본문 텍스트
-      }}
-      className="dark:bg-gradient-to-b dark:from-[#111827] dark:to-[#1E293B] dark:text-[#F8FAFC]"
+      className="min-h-screen bg-gradient-to-br from-[#FAFBFF] via-[#F0F4FF] to-[#E8EFFF] text-foreground dark:from-[#111827] dark:to-[#1E293B] dark:text-foreground"
     >
       <Header />
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 60px)' }}>
@@ -29,10 +23,8 @@ function AppContent() {
             flex: 1,
             padding: '2rem',
             maxWidth: 'none',
-            background: '#FAFBFF', // 카드 배경 (라이트)
-            color: '#0F172A', // 본문 텍스트 (라이트)
           }}
-          className="dark:bg-[#273249] dark:text-[#F8FAFC]"
+          className="bg-card text-card-foreground"
         >
           <AppRouter />
         </Container>

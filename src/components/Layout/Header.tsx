@@ -11,22 +11,24 @@ export function Header() {
   
   const headerStyles = {
     light: {
-      background: 'var(--card)',
-      borderColor: 'var(--border)',
+      background: 'hsl(var(--card))',
+      borderColor: 'hsl(var(--border))',
       boxShadow: 'var(--shadow)',
+      color: 'hsl(var(--card-foreground))',
     },
     dark: {
-      background: 'var(--card)',
-      borderColor: 'var(--border)',
+      background: 'hsl(var(--card))',
+      borderColor: 'hsl(var(--border))',
       boxShadow: 'var(--shadow-lg)',
+      color: 'hsl(var(--card-foreground))',
     }
   };
 
   const buttonStyles = {
     light: {
-      background: 'var(--accent)',
-      color: 'var(--accent-foreground)',
-      border: '1px solid var(--border)',
+      background: 'hsl(var(--accent))',
+      color: 'hsl(var(--accent-foreground))',
+      border: '1px solid hsl(var(--border))',
       fontSize: 16,
       fontWeight: 500,
       cursor: 'pointer',
@@ -36,9 +38,9 @@ export function Header() {
       boxShadow: 'var(--shadow-sm)',
     },
     dark: {
-      background: 'var(--accent)',
-      color: 'var(--accent-foreground)',
-      border: '1px solid var(--border)',
+      background: 'hsl(var(--accent))',
+      color: 'hsl(var(--accent-foreground))',
+      border: '1px solid hsl(var(--border))',
       fontSize: 16,
       fontWeight: 500,
       cursor: 'pointer',
@@ -76,7 +78,7 @@ export function Header() {
             size="5"
             style={{ 
               cursor: 'pointer', 
-              color: 'var(--foreground)',
+              color: 'hsl(var(--foreground))',
               transition: 'color 150ms ease-in-out'
             }} 
             onClick={() => navigate('/')}
@@ -127,6 +129,20 @@ export function Header() {
             >
               좋아요 모아보기
             </button>
+            <button
+              style={currentButtonStyle}
+              onClick={() => navigate('/theme-test')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = 'var(--shadow)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = currentButtonStyle.boxShadow;
+              }}
+            >
+              테마 테스트
+            </button>
           </nav>
         </Flex>
         
@@ -135,12 +151,12 @@ export function Header() {
           <DarkModeToggle />
           <ConnectButton 
             style={{ 
-              background: 'var(--primary)',
-              color: 'var(--primary-foreground)',
+              background: 'hsl(var(--primary))',
+              color: 'hsl(var(--primary-foreground))',
               borderRadius: 8, 
               boxShadow: 'var(--shadow-sm)', 
               fontWeight: 600,
-              border: '1px solid var(--primary)',
+              border: '1px solid hsl(var(--primary))',
               transition: 'all 150ms ease-in-out'
             }} 
           />
